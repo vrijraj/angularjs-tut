@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div ng-controller="myController">
+        {{message}}
+    </div>
+   
+
+    <script>
+        // Create a module name ngApp
+        var app = angular.module('ngApp',[]);
+
+        // Create a controller name myController in ngApp Module
+        app.controller('myController',function($scope){
+            $scope.message = "This is a Message";
+        })
+    </script>
+
+</body>
+</html>

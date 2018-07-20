@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div ng-controller="myController">
+        Rows to Display: <input type="number" step="1" min="0" max="5" ng-model="rowLimit">
+        <table border="1">
+            <tr>
+                <td><b>First Name</b></td>
+                <td><b>Last Name Name</b></td>
+                <td><b>Age Name</b></td>
+            </tr>
+            <tr ng-repeat="poo in peopleData | limitTo:rowLimit">
+                <td>{{poo.fname | uppercase}}</td>
+                <td>{{poo.lname | lowercase}}</td>
+                <td>{{poo.age }}</td>
+            </tr>
+        </table>
+    </div>
+   
+
+    <script>
+        // Create a module name ngApp
+        var app = angular.module('ngApp',[]);
+
+        var people = [
+            {
+                fname:"Vrijraj",
+                lname:"Singh",
+                age:"22"
+            },
+            {
+                fname:"Kamal",
+                lname:"Vaid",
+                age:"27"
+            },
+            {
+                fname:"Kumari Varsha",
+                lname:"Jaiswal",
+                age:"40"
+            },
+            {
+                fname:"Sonakshi",
+                lname:"Shukla",
+                age:"88"
+            },
+            {
+                fname:"Kishan",
+                lname:"Patel",
+                age:"18"
+            },
+            {
+                fname:"Nishant",
+                lname:"Puri",
+                age:"21"
+            }
+        ]
+
+        // Create a controller name myController in ngApp Module
+        app.controller('myController',function($scope){      
+            $scope.peopleData = people;
+            $scope.rowLimit =3;
+        })
+    </script>
+
+</body>
+</html>

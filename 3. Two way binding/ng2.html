@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div ng-controller="myController">
+        <table>
+            <tr>
+                <td>First Name : </td>
+                <td><input type="text" ng-model="peopleData.fname"></td>
+            </tr>
+            <tr>
+                <td>Last Name : </td>
+                <td><input type="text" ng-model="peopleData.lname"></td>
+            </tr>
+            <tr>
+                <td>Gender : </td>
+                <td><input type="text" ng-model="peopleData.gender"></td>
+            </tr>
+        </table>
+       
+        <br>
+        <br>
+
+        <table>
+            <tr>
+                <td>First Name : </td>
+                <td>{{peopleData.fname}}</td>
+            </tr>
+            <tr>
+                <td>Last Name : </td>
+                <td>{{peopleData.lname}}</td>
+            </tr>
+            <tr>
+                <td>Gender : </td>
+                <td>{{peopleData.gender}}</td>
+            </tr>
+        </table>
+
+    </div>
+   
+
+    <script>
+        // Create a module name ngApp
+        var app = angular.module('ngApp',[]);
+
+        // Create a controller name myController in ngApp Module
+        app.controller('myController',function($scope){      
+
+            var people = {
+                fname : "Vrijraj",
+                lname : "Singh",
+                gender : "Male"
+            }
+
+            $scope.peopleData = people;
+        })
+    </script>
+
+</body>
+</html>

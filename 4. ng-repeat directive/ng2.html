@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div ng-controller="myController">
+       <ul>
+           <li ng-repeat="poo in peopleData">
+               {{poo.fname}}
+               
+               <ul>
+                   <li ng-repeat="skill in poo.skills">
+                       {{skill.name}}
+                   </li>
+               </ul>
+           </li>
+       </ul>
+    </div>
+   
+
+    <script>
+        // Create a module name ngApp
+        var app = angular.module('ngApp',[]);
+
+        var people = [
+            {
+                fname:"Vrijraj",
+                skills:[
+                    { name:"NodeJS" },
+                    { name:"AngularJS" },
+                    { name:"Firebase" }
+                ]
+            },
+            {
+                fname:"Kamal",
+                skills:[
+                    { name:"Android" },
+                    { name:"Actions On Google" },
+                    { name:"Firebase" }
+                ]
+            },
+            {
+                fname:"Kumari Varsha",
+                skills:[
+                    { name:"HTML" },
+                    { name:"Actions On Google" },
+                    { name:"JavaScript" }
+                ]
+            },
+            {
+                fname:"Sonakshi",
+                skills:[
+                    { name:"Machine Learning" },
+                    { name:"Google Cloud" },
+                    { name:"PWA" }
+                ]
+            }
+        ]
+
+        // Create a controller name myController in ngApp Module
+        app.controller('myController',function($scope){      
+            $scope.peopleData = people;
+        })
+    </script>
+
+</body>
+</html>

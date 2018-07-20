@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ngApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.32/angular.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+
+    <div ng-controller="myController">
+        <table>
+            <tr>
+                <td>Language</td>
+                <td>like</td>
+                <td>Dislike</td>
+                <td>Actions</td>
+            </tr>
+
+            <tr ng-repeat="language in langData">
+                <td>{{ language.name}}</td>
+                <td>{{ language.like}}</td>
+                <td>{{ language.dislike}}</td>
+                <td>
+                    <input type="button" value="like" ng-click="incrementLikes(language)">
+                    <input type="button" value="like" ng-click="incrementDislikes(language)">
+                </td>
+            </tr>
+        </table>
+    </div>
+   
+
+    <script>
+        // Create a module name ngApp
+        var app = angular.module('ngApp',[]);
+
+        var languages = [
+            {
+                name:"C",
+                like:"0",
+                dislike:"0"
+            },
+            {
+                name:"C++",
+                like:"0",
+                dislike:"0"
+            },
+            {
+                name:"Java",
+                like:"0",
+                dislike:"0"
+            },
+            {
+                name:"JavaScript",
+                like:"0",
+                dislike:"0"
+            }
+        ]
+
+        // Create a controller name myController in ngApp Module
+        app.controller('myController',function($scope){      
+            $scope.langData = languages;
+
+            $scope.incrementLikes = function(language){
+                language.like++;
+            }
+
+            $scope.incrementDislikes = function(language){
+                language.dislike++;
+            }
+        })
+    </script>
+
+</body>
+</html>
