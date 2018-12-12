@@ -21,9 +21,50 @@ Example:
   <p>Sum: {{ a + b }}</p>
 </div>
 ```
-*Same example using `ng-bind`:
+* Same example using `ng-bind`:
 ```js
 <div ng-app="" ng-init="a=1;b=5">
   <p>Sum: <span ng-bind="a + b"></span></p>
+</div>
+```
+
+## AngularJS Strings
+```js
+<div ng-app="" ng-init="firstName='Vrijraj';lastName='Singh'">
+  <p>The name is {{ firstName + " " + lastName }}</p>
+</div>
+```
+* Same example using `ng-bind`:
+```js
+<div ng-app="" ng-init="firstName='Vrijraj';lastName='Singh'">
+  <p>The name is <span ng-bind="firstName + ' ' + lastName"></span></p>
+</div>
+```
+
+## AngularJS Objects
+```js
+<div ng-app="" ng-init="person={firstName:'Vrijraj',lastName:'Singh'}">
+  <p>The name is {{ person.lastName }}</p>
+</div>
+```
+
+* Same example using `ng-bind`:
+```js
+<div ng-app="" ng-init="person={firstName:'Vrijraj',lastName:'Singh'}">
+  <p>The name is <span ng-bind="person.lastName"></span></p>
+</div>
+```
+
+## AngularJS Arrays
+```js
+<div ng-app="" ng-init="data=[1,15,19,2,40]">
+  <p>The third result is {{ data[2] }}</p>
+</div>
+```
+
+* Same example using `ng-bind`:
+```js
+<div ng-app="" ng-init="data=[1,15,19,2,40]">
+  <p>The third result is <span ng-bind="data[2]"></span></p>
 </div>
 ```
