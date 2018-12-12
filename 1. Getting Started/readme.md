@@ -7,7 +7,7 @@ AngularJS will resolve the expression, and return the result exactly where the e
 
 AngularJS expressions are much like JavaScript expressions: They can contain literals, operators, and variables.
 
-Example {{ 5 + 5 }} or {{ firstName + " " + lastName }}
+Example `{{ 5 + 5 }}` or `{{ firstName + " " + lastName }}`
 
 * If you remove the ng-app directive, HTML will display the expression as it is, without solving it
 
