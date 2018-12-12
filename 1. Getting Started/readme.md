@@ -18,8 +18,6 @@ Example:
 
 ```js
 <div ng-app="" ng-init="quantity=1;cost=5">
-
-<p>Total in dollar: {{ quantity * cost }}</p>
-
+  <p>Total in dollar: {{ quantity * cost }}</p>
 </div>
 ```
