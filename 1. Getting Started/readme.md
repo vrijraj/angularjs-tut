@@ -11,13 +11,19 @@ Example {{ 5 + 5 }} or {{ firstName + " " + lastName }}
 
 * If you remove the ng-app directive, HTML will display the expression as it is, without solving it
 
-# AngularJS Numbers
+## AngularJS Numbers
 AngularJS numbers are like JavaScript numbers:
 `{{ 5+5 }}`
 Example:
 
 ```js
-<div ng-app="" ng-init="quantity=1;cost=5">
-  <p>Total in dollar: {{ quantity * cost }}</p>
+<div ng-app="" ng-init="a=1;b=5">
+  <p>Sum: {{ a + b }}</p>
+</div>
+```
+*Same example using `ng-bind`:
+```js
+<div ng-app="" ng-init="a=1;b=5">
+  <p>Sum: <span ng-bind="a + b"></span></p>
 </div>
 ```
