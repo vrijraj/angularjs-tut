@@ -35,3 +35,19 @@ Example 2
     </ul>
   </div>
 ```
+
+Example 2
+
+```html
+  <div ng-app="" ng-init="names=[
+    {name:'Jani',country:'Norway'},
+    {name:'Hege',country:'Sweden'},
+    {name:'Kai',country:'Denmark'}]">
+
+    <ul>
+      <li ng-repeat="x in names">
+        {{ x.name + ', ' + x.country }}
+      </li>
+    </ul>
+  </div>
+```
