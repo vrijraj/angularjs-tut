@@ -24,3 +24,14 @@ Example 2
 
 
 ## Repeating HTML Elements
+`ng-repeat` directive repeats an HTML element:
+
+```html
+  <div ng-app="" ng-init="names=['Jani','Hege','Kai']">
+    <ul>
+      <li ng-repeat="x in names">
+        {{ x }}
+      </li>
+    </ul>
+  </div>
+```
