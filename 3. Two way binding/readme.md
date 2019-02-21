@@ -71,3 +71,24 @@ When data in the model changes, the view reflects the change, and when data in t
     });
     </script>
 ```
+
+## AngularJS Controller
+Applications in AngularJS are controlled by controllers. Read about controllers in the AngularJS Controllers chapter.
+
+Because of the immediate synchronization of the model and the view, the controller can be completely separated from the view, and simply concentrate on the model data. Thanks to the data binding in AngularJS, the view will reflect any changes made in the controller.
+
+```html
+  <div ng-app="myApp" ng-controller="myCtrl">
+    <h1 ng-click="changeName()">{{firstname}}</h1>
+  </div>
+
+  <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+      $scope.firstname = "John";
+      $scope.changeName = function() {
+        $scope.firstname = "Nelly";
+      }
+    });
+  </script>
+```
