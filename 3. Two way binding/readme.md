@@ -21,3 +21,6 @@ Example 2
     Total in dollar: {{ quantity * price }}
   </div>
 ```
+
+
+## Repeating HTML Elements
