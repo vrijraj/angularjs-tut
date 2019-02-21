@@ -56,3 +56,18 @@ Example 2
 Data binding in AngularJS is the synchronization between the model and the view.
 
 When data in the model changes, the view reflects the change, and when data in the view changes, the model is updated as well. This happens immediately and automatically, which makes sure that the model and the view is updated at all times.
+
+```html
+    <div ng-app="myApp" ng-controller="myCtrl">
+      Name: <input ng-model="firstname">
+      <h1>{{firstname}}</h1>
+    </div>
+
+    <script>
+    var app = angular.module('myApp', []);
+    app.controller('myCtrl', function($scope) {
+      $scope.firstname = "John";
+      $scope.lastname = "Doe";
+    });
+    </script>
+```
